@@ -14,7 +14,9 @@ def scan():
       #checks for obstacle if none found, continues moving and checking
     else: #if obj is found
         stop()
-                
+        while getDistance() > 4:
+            forward(1)
+            getObstacle(1)
         while getObstacle(1) >= 6399: #Scans again if osbstacle detected
             turnBy(5, "deg")#Rotates to scan right
             getObstacle(1) #Scans
